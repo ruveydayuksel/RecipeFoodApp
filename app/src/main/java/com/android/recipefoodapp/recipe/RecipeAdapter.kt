@@ -1,4 +1,4 @@
-package com.android.recipefoodapp
+package com.android.recipefoodapp.recipe
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +7,9 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.android.recipefoodapp.R
+import com.android.recipefoodapp.Recipe
+import com.android.recipefoodapp.RecipeClickListener
 import com.bumptech.glide.Glide
 
 class RecipeAdapter(
