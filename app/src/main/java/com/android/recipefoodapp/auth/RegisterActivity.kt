@@ -47,10 +47,17 @@ class RegisterActivity : AppCompatActivity() {
             val phone = phoneInput.text.toString().trim()
             val password = passwordInput.text.toString().trim()
 
+            sharedPreferences.edit().apply {
+                putString("email", email)
+                putString("password", password)
+                apply()
+            }
+
             if (fullName.isEmpty() || email.isEmpty() || phone.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
+
 
             if (!CredentialsManager.isEmailValid(email)) {
                 Toast.makeText(this, "Invalid email format", Toast.LENGTH_SHORT).show()

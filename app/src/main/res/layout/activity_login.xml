@@ -104,7 +104,7 @@
         android:layout_height="50dp"
         android:background="@drawable/rectangle_5_2"
         android:drawableEnd="@drawable/vector"
-        android:text="Next"
+        android:text="Login"
         android:paddingHorizontal="120dp"
         android:layout_marginHorizontal="40dp"
         android:textAlignment="center"

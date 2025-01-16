@@ -7,43 +7,47 @@ import kotlinx.coroutines.withContext
 
 object CredentialsManager {
 
-    // E-posta formatını doğrulama
+
     fun isEmailValid(email: String): Boolean {
         return Patterns.EMAIL_ADDRESS.matcher(email).matches()
     }
 
-    // Şifre doğrulama: En az 6 karakter
     fun isPasswordValid(password: String): Boolean {
         return password.length >= 6
     }
 
-    // Kayıt işlemi
+
     suspend fun register(email: String, password: String): Result<Unit> {
         return withContext(Dispatchers.IO) {
             try {
-                // Burada, örnek olarak kayıt işlemi simülasyonu yapılmaktadır
-                // Gerçek kayıt işlemi yapılabilir (Firebase, API vb. kullanarak)
-                Thread.sleep(1000) // Simülasyon amacıyla
-                // Örnek: Kayıt başarılı ise
+                Thread.sleep(1000)
                 Result.success(Unit)
             } catch (e: Exception) {
-                // Kayıt hatası durumu
+
                 Result.failure(e)
             }
         }
     }
 
-    // Kullanıcı girişi yapma
+
     suspend fun login(email: String, password: String): Result<Unit> {
         return withContext(Dispatchers.IO) {
             try {
-                // Burada, örnek olarak giriş işlemi simülasyonu yapılmaktadır
-                // Gerçek giriş işlemi yapılabilir (Firebase, API vb. kullanarak)
-                Thread.sleep(1000) // Simülasyon amacıyla
-                // Örnek: Giriş başarılı ise
+                Thread.sleep(1000)
                 Result.success(Unit)
             } catch (e: Exception) {
-                // Giriş hatası durumu
+                Result.failure(e)
+            }
+        }
+    }
+
+    suspend fun logout(): Result<Unit> {
+        return withContext(Dispatchers.IO) {
+            try {
+
+                Thread.sleep(500)
+                Result.success(Unit)
+            } catch (e: Exception) {
                 Result.failure(e)
             }
         }
